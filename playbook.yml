@@ -2,7 +2,7 @@
 - name: This is a hello-world example
   hosts: 172.19.158.169
   tasks:
-    - name: Create a file called '/tmp/testfile1.txt' with the content 'hello world'.
+    - name: Create a file called '/tmp/testfile123.txt' with the content 'hello world'.
       copy:
         content: hello worldn
-        dest: /tmp/testfile1.txt
+        dest: /tmp/testfile123.txt
