@@ -1,6 +1,6 @@
 ---
 - name: This is a hello-world example
-  hosts: localhostiqbal
+  hosts: localhost
   tasks:
     - name: Create a file called '/tmp/testfile1.txt' with the content 'hello world'.
       copy:
