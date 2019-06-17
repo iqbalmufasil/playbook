@@ -1,6 +1,6 @@
 ---
 - name: This is a hello-world example
-  hosts: 172.19.158.169
+  hosts: localhost
   tasks:
     - name: Create a file called '/tmp/testfile123.txt' with the content 'hello world'.
       copy:
