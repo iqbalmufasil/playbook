@@ -1,6 +1,6 @@
 ---
 - name: This is a hello-world example
-  hosts: iqbal-Virtual-Machine
+  hosts: localhost
   tasks:
     - name: Create a file called '/tmp/testfile123.txt' with the content 'hello world'.
       copy:
