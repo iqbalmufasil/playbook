@@ -6,7 +6,7 @@
       become: yes
     - name: copy the nginx config file and restart nginx
       copy:
-        src: /ansiblefiles/ngnixconf/static_site.cfg
+        src: /home/miqbal/Desktop/test.txt
         dest: /etc/nginx/sites-available/static_site.cfg
       become: yes
     - name: create symlink
