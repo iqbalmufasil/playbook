@@ -9,7 +9,7 @@
         src: /ansiblefiles/ngnixconf/static_site.cfg
         dest: /etc/nginx/sites-available/static_site.cfg
       become: yes
-	  remote_src: yes
+      remote_src: yes
     - name: create symlink
       file:
         src: /etc/nginx/sites-available/static_site.cfg
