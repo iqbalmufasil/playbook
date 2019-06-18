@@ -1,9 +1,27 @@
 ---
-- name: This is a hello-world example
-  hosts: all
+- hosts: all
   tasks:
-    - name: Create a file called '/tmp/testfile123.txt' with the content 'hello world'.
+    - name: ensure nginx is at the latest version
+      apt: name=nginx state=latest
+      become: yes
+    - name: start nginx
+      service:
+          name: nginx
+          state: started
+      become: yes
+    - name: copy the nginx config file and restart nginx
       copy:
-        content: hello worldn
-        dest: /tmp/testfile123.txt
-      
+        src: /ansiblefiles/ngnixconf/static_site.cfg
+        dest: /etc/nginx/sites-available/static_site.cfg
+      become: yes
+    - name: create symlink
+      file:
+        src: /etc/nginx/sites-available/static_site.cfg
+        dest: /etc/nginx/sites-enabled/default
+        state: link
+      become: yes
+	- name: restart nginx
+      service:
+        name: nginx
+        state: restarted
+      become: yes
